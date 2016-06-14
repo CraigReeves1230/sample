@@ -12,7 +12,7 @@ module SessionsHelper
       # if there is no session in place, look for cookies
     elsif cookies.signed[:user_id]
       temp_user = User.find_by id: cookies.signed[:user_id]
-      if temp_user && temp_user.authenticated?(cookies[:remember_token])
+      if temp_user && temp_user.authenticated?(:remember, cookies[:remember_token])
         @current_user = temp_user
       end
     end

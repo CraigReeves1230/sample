@@ -27,4 +27,9 @@ class ActiveSupport::TestCase
     defined?(post_via_redirect)
   end
 
+  # returns the full title
+  def full_title(string)
+    string + " | Ruby on Rails Tutorial Sample App"
+  end
+
 end
